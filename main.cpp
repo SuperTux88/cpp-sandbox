@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
+#include "person.h"
+#include "lennart.h"
 #define ARRAY_SIZE 10
 
 
@@ -20,7 +22,22 @@ int main(int argc, char **argv){
 //	pointerFun();
 //	mallocFun();
 //	typeDefFun();
-	structFun();
+//	structFun();
+
+	Person* person = new Person();
+	person->hello();
+
+	Person lennart ("lennart custom constructor");
+	lennart.hello();
+
+	Lennart* nochnLennart = new Lennart();
+	nochnLennart->hello();
+
+	Person* againLennart = new Lennart();
+	againLennart->hello();
+
+	delete person;
+
 }
 
 void incrementByOne(int& x){
